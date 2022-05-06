@@ -8,11 +8,13 @@ const addBtn = document.querySelector("#add-book");
 const bookTable = document.querySelector("#book-table");
 const deleteButtons = document.querySelectorAll(".delete");
 
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
 }
 
 function addBookToLibrary(book) {
@@ -101,7 +103,6 @@ addBtn.addEventListener("click", () => {
   }
 });
 
-document.addEventListener ("keydown", function(event) {
-    if (event.key == "Enter")
-    addBtn.click();
-})
+document.addEventListener("keydown", function (event) {
+  if (event.key == "Enter") addBtn.click();
+});
